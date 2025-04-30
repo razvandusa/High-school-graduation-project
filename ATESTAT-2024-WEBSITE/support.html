@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+      emailjs.init({
+        publicKey: "fFZMPhs-cBRKCMDRm",
+      });
+    })();
+    </script>
+    <script src="sendemail.js">
+
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact US</title>
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="support.css">
+    <link rel="shortcut icon" type="x-icon" href="images/minecraft.png">
+    <script src="https://kit.fontawesome.com/3179634a05.js" crossorigin="anonymous"></script>
+</head>
+<nav class="navbar">
+    <div class="navbar__containter">
+        <a href="/" id="navbar__logo">
+            <i class="fas fa-gamepad"></i>  MINECRAFT</a>
+        <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="/" class="navbar__links">Home</a>
+            </li>
+            <li class="navbar__item">
+                <a href="/addtocart.html" class="navbar__links">Products</a>
+            </li>
+            <li class="navbar__item">
+                <a href="/support.html" class="navbar__links">Support</a>
+            </li>
+            <li class="navbar__btn">
+                <a href="/signup.html" class="button">Log Out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+        <section class="contact">
+            <div class="content">
+                <h2>Contact Us</h2>
+                <p>We just need a little bit of information from you in the form below and we’re glad to take care of you.If you've found an issue that you'd like to report to us you can do so. Remember, if you don't report it we can't fix it!</p>
+            </div>
+            <div class="container">
+                <div class="contactInfo">
+                    <div class="box">
+                        <div class="icon"><i class="fa-solid fa-map-pin"></i></div>
+                        <div class="text">
+                            <h3>Address</h3>
+                            <p>4671 Sugar Camp Road,<br>Qwatonna,Minnesota,<br>55060</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="text">
+                            <h3>Phone</h3>
+                            <p>0754-669-420</p>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="text">
+                            <h3>Email</h3>
+                            <p>minecraft@support-mail.net</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contactForm">
+                    <form>
+                        <h2>Send Message</h2>
+                        <div class="inputBox">
+                            <input type="text" id="name" required="required">
+                            <span>Full Name</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" id="email" required="required">
+                            <span>Email</span>
+                        </div>
+                        <div class="inputBox">
+                            <input type="text" id="message" required="required">
+                            <span>Type your Message...</span>
+                        </div>
+                        <button type="button" class="button" onclick="sendMail()">Send</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <script src="app.js"></script>
+    </body>
+</html>

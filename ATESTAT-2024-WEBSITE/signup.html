@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" type="x-icon" href="images/minecraft.png">
+    <script src="https://kit.fontawesome.com/3179634a05.js" crossorigin="anonymous"></script>
+</head>
+<body background="images/background.png">
+<div class="container">
+    <div class="form-box">
+        <h2 id="title">Sign Up</h2>
+        <form>
+            <div class="input-group">
+                <div class="input-field" id="nameField">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="Name">
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="email" placeholder="Email">
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password">
+                </div>
+                <p>Lost password <a href="#">Click Here!</a></p>
+            </div>
+            <div class="btn-field">
+                <button type="button" id="signupBtn">Sign up</button>
+                <button type="button" id="signinBtn" class="disable">Sign in</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    let signupBtn = document.getElementById("signupBtn");
+    let signinBtn = document.getElementById("signinBtn");
+    let nameField = document.getElementById("nameField");
+    let title = document.getElementById("title");
+
+    // Verifica daca exista username si parola in localStorage
+    let storedUsername = localStorage.getItem('username');
+    let storedPassword = localStorage.getItem('password');
+
+    if (storedUsername && storedPassword) {
+        username = storedUsername;
+        password = storedPassword;
+    }
+
+    signinBtn.onclick = function () {
+        nameField.style.maxHeight = "0";
+        title.innerHTML = "Sign In";
+        signupBtn.classList.add("disable");
+        signinBtn.classList.remove("disable");
+        let inputUsername = document.querySelector('input[type="email"]').value;
+        let inputPassword = document.querySelector('input[type="password"]').value;
+        if (inputUsername === username && inputPassword === password) {
+            window.location.href = "index.html";
+        } else if (inputUsername !== "" && inputPassword !== "") {
+            alert('Invalid username or password!');
+            document.querySelector('input[type="email"]').value = "";
+            document.querySelector('input[type="password"]').value = "";
+        }
+    }
+
+    function isValidEmail(email) {
+    // Expresia regulată pentru verificarea adresei de email
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+    }
+
+    signupBtn.onclick = function () {
+    nameField.style.maxHeight = "60px";
+    title.innerHTML = "Sign Up";
+    signupBtn.classList.remove("disable");
+    signinBtn.classList.add("disable");
+    let inputUsername = document.querySelector('input[type="email"]').value;
+    let inputPassword = document.querySelector('input[type="password"]').value;
+    if (isValidEmail(inputUsername) && inputPassword !== "") {
+        // Verifică dacă adresa de email este validă și parola nu este goală
+        localStorage.setItem('username', inputUsername);
+        localStorage.setItem('password', inputPassword);
+        alert('Sign Up Succesfully!');
+        window.location.href = "index.html";
+    } else if (inputUsername !== "" && inputPassword !== ""){
+        alert('Please enter a valid email and password!');
+    }
+    }
+</script>
+</body>
+</html>
