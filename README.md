@@ -1,4 +1,4 @@
-High School Graduation Project: Interactive Shopping Website
+# High School Graduation Project: Interactive Shopping Website
 
 This project is a simple interactive shopping website developed for a high school graduation assignment, providing essential features such as product viewing, adding items to a cart, signup functionality, and customer support.
 
