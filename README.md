@@ -2,18 +2,13 @@
 
 This project is a simple interactive shopping website developed for a high school graduation assignment, providing essential features such as product viewing, adding items to a cart, signup functionality, and customer support.
 
-Project Architecture
-
+## Project Architecture
 The architecture of this project is straightforward and comprises:
+- **HTML files**: Serve as the structure for different pages (index, cart, signup, support).
+- **CSS files**: Manage the styling of elements and layout.
+- **JavaScript files**: Handle dynamic behaviors such as adding items to the cart, user interactions, and email sending capabilities.
 
-HTML files: Serve as the structure for different pages (index, cart, signup, support).
-
-CSS files: Manage the styling of elements and layout.
-
-JavaScript files: Handle dynamic behaviors such as adding items to the cart, user interactions, and email sending capabilities.
-
-Directory Structure
-
+### Directory Structure
 .
 ├── index.html
 ├── addtocart.html
@@ -29,41 +24,40 @@ Directory Structure
 ├── sendemail.js
 ├── image/
 │   ├── background.png
-│   └── [other images...]
+│   └── [other images…]
 └── .vscode/
-    └── settings.json
+└── settings.json
+## Prerequisites
+- A modern web browser (Chrome, Firefox, Edge, etc.).
+- [Node.js](https://nodejs.org/) (optional, for running local server or additional JavaScript functionalities).
 
-Prerequisites
-
-A modern web browser (Chrome, Firefox, Edge, etc.).
-
-Node.js (optional, for running local server or additional JavaScript functionalities).
-
-Local Setup Instructions
+## Local Setup Instructions
 
 To bootstrap this project locally:
 
-Clone or download the project repository.
+1. Clone or download the project repository.
 
-Open the main index.html file directly in your browser or, preferably, run a local HTTP server:
+2. Open the main `index.html` file directly in your browser or, preferably, run a local HTTP server:
 
+```bash
 # Using Python's built-in HTTP server
 cd path/to/project
 python3 -m http.server 8000
-
+```
 Then open http://localhost:8000 in your browser.
-
-Optional Shell Script
 
 To simplify local setup, you can use this shell script:
 
+Create a file named setup.sh with the following content:
+
+```bash
 #!/bin/bash
 
 # Navigate to project directory
 cd $(dirname "$0")
 
 # Start Python HTTP server
-python3 -m http.server 8000
+python3 -m http.server 8000 &
 
 # Open the default browser
 echo "Opening http://localhost:8000 in your default browser"
@@ -75,28 +69,10 @@ elif which open > /dev/null; then
 else
   echo "Please manually open http://localhost:8000"
 fi
+```
 
-Make this script executable and run it:
-
+Make the script executable and run it:
+```bash
 chmod +x setup.sh
 ./setup.sh
-
-Features
-
-Interactive product cart
-
-User signup
-
-Basic support form
-
-Technologies Used
-
-HTML
-
-CSS
-
-JavaScript
-
-Author
-
-Your Name - High School Graduation Project
+```
