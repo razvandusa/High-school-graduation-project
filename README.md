@@ -9,24 +9,28 @@ The architecture of this project is straightforward and comprises:
 - **JavaScript files**: Handle dynamic behaviors such as adding items to the cart, user interactions, and email sending capabilities.
 
 ### Directory Structure
+```
 .
 ├── index.html
 ├── addtocart.html
 ├── signup.html
 ├── support.html
-├── styles.css
-├── addtocart.css
-├── signup.css
-├── support.css
-├── navbar.css
-├── app.js
-├── addtocart.js
-├── sendemail.js
+├── css/
+│   ├── styles.css
+│   ├── addtocart.css
+│   ├── signup.css
+│   ├── support.css
+│   └── navbar.css
+├── js/
+│   ├── app.js
+│   ├── addtocart.js
+│   └── sendemail.js
 ├── image/
 │   ├── background.png
 │   └── [other images…]
 └── .vscode/
-└── settings.json
+    └── settings.json
+```
 ## Prerequisites
 - A modern web browser (Chrome, Firefox, Edge, etc.).
 - [Node.js](https://nodejs.org/) (optional, for running local server or additional JavaScript functionalities).
